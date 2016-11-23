@@ -7,9 +7,13 @@ class Singleton
 			m_data = data; 		// Initialize data/
 		}
 		
-		Singleton (const Singleton);	// Prevent copy constructor/
-		Singleton operator=(const Singleton);	// Prevent assigment operator/
+		
 		static Singleton *m_instance; 	// Instance/
+
+		Singleton(Singleton const&) = delete;             // Copy construct
+		Singleton(Singleton&&) = delete;                  // Move construct
+		Singleton& operator=(Singleton const&) = delete;  // Copy assign
+		Singleton& operator=(Singleton &&) = delete;      // Move assign
 
 		int m_data; 			// Any data you want/
 	public:
