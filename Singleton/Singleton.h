@@ -9,11 +9,12 @@ class Singleton
 		
 		
 		static Singleton *m_instance; 	// Instance/
-
-		Singleton(Singleton const&) = delete;             // Copy construct
-		Singleton(Singleton&&) = delete;                  // Move construct
-		Singleton& operator=(Singleton const&) = delete;  // Copy assign
-		Singleton& operator=(Singleton &&) = delete;      // Move assign
+		
+		// Delete operator/
+		Singleton(Singleton const&) = delete;             // Copy construct/
+		Singleton(Singleton&&) = delete;                  // Move construct/
+		Singleton& operator=(Singleton const&) = delete;  // Copy assignment operator/
+		Singleton& operator=(Singleton &&) = delete;      // Move assignment operator/
 
 		int m_data; 			// Any data you want/
 	public:
