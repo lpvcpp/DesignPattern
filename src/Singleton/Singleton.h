@@ -2,9 +2,14 @@ class Singleton
 {
 	private:
 		// Constructor must be private/
-		Singleton(data = 0)
+		Singleton(int data = 0)
 		{
 			m_data = data; 		// Initialize data/
+		}
+		
+		~Singleton()		// Destructor if you want/
+		{
+
 		}
 		
 		
@@ -18,7 +23,14 @@ class Singleton
 
 		int m_data; 			// Any data you want/
 	public:
-		static Singleton* GetInstance();// Get instance of class here/
-		~Singleton();			// Destructor if you want/
+		static Singleton* GetInstance()// Get instance of class here/
+		{
+			if(!m_instance)
+			{
+				m_instance = new Singleton();
+			}
+			return m_instance;
+		}
 
-}
+
+};
